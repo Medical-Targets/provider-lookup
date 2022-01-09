@@ -1,6 +1,8 @@
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
 
-export default function CardFooter() {
+export default function CardFooter({providers, handleLoadMore}) {
+  //empty array for the search results in case its undefined
+
   return (
     <div className="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
       <div className="flex-1 flex justify-between sm:hidden">
@@ -20,8 +22,8 @@ export default function CardFooter() {
       <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
         <div>
           <p className="text-sm text-gray-700">
-            Showing <span className="font-medium">1</span> to <span className="font-medium">10</span> of{' '}
-            <span className="font-medium">97</span> results
+            Showing <span className="font-medium">1</span> to <span className="font-medium">{providers.result_count < 20 ? providers.result_count : 20}</span> of{' '}
+            <span className="font-medium">{providers.result_count}</span> results
           </p>
         </div>
         <div>
@@ -74,13 +76,14 @@ export default function CardFooter() {
             >
               10
             </a>
-            <a
+            <button
               href="#"
+              onClick={handleLoadMore}
               className="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
             >
               <span className="sr-only">Next</span>
               <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
-            </a>
+            </button>
           </nav>
         </div>
       </div>
