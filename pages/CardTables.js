@@ -1,4 +1,9 @@
 export default function CardTables({ providers }) {
+  if (providers == null) {
+    return( 
+      <div className="h-screen w-screen flex flex-col bg-gray-50">
+      </div>
+    )} else {
   return (
     <div className="flex flex-col">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -80,7 +85,7 @@ export default function CardTables({ providers }) {
         </div>
       </div>
     </div>
-  )
+  )}
 }
 
 // export async function getStaticProps() {

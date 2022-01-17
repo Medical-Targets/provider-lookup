@@ -1,7 +1,6 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
 
-export default function CardFooter({providers, handleLoadMore}) {
-  //empty array for the search results in case its undefined
+export default function CardFooter({providers}) {
 
   return (
     <div className="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
@@ -78,7 +77,6 @@ export default function CardFooter({providers, handleLoadMore}) {
             </a>
             <button
               href="#"
-              onClick={handleLoadMore}
               className="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
             >
               <span className="sr-only">Next</span>
