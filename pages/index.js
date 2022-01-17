@@ -1,5 +1,5 @@
-import CardFooter from './CardFooter';
-import CardTables from './CardTables';
+import CardFooter from '../components/CardFooter';
+import CardTables from '../components/CardTables';
 import { useRef, useEffect } from 'react';
 
 const defaultEndpoint = 'https://npiregistry.cms.hhs.gov/api/?version=2.1&limit=20&city=NEW+YORK';
