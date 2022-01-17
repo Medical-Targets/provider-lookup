@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function CardTables({ providers }) {
   if (providers == null) {
     return( 
@@ -47,7 +49,7 @@ export default function CardTables({ providers }) {
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center">
                         <div className="flex-shrink-0 h-10 w-10">
-                          <img className="object-contain h-10 w-10 rounded-full" src="https://sanabenefits.com/wp-content/themes/sana-benefits/images/logo.png" alt="" />
+                          <Image className="object-contain h-10 w-10 rounded-full" src="https://sanabenefits.com/wp-content/themes/sana-benefits/images/logo.png" alt="" />
                         </div>
                         <div className="ml-4">
                           <div className="text-sm font-medium text-gray-900">{ provider.basic.first_name || provider.basic.organization_name } { provider.basic.last_name }</div>
@@ -87,13 +89,3 @@ export default function CardTables({ providers }) {
     </div>
   )}
 }
-
-// export async function getStaticProps() {
-//   const providers = await fetch('https://npiregistry.cms.hhs.gov/api/?version=2.1&city=lasvegas')
-//     .then(res => res.json());
-//   return {
-//     props: {
-//       providers
-//     }
-//   }
-// }
